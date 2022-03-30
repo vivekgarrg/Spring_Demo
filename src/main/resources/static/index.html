@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Hello</title>
+</head>
+<body>
+<h1>Welcome to spring</h1>
+<p id='res'></p>
+</body>
+<script type="text/javascript">
+
+ let data = document.getElementById('res');
+ fetch("http://localhost:3000/topics")
+ .then(res=> res.json())
+ .then(data=>data)
+ .then(arr=>{
+	 arr.map(elem=>{
+		 data.innerText += elem.name + " ";
+	 })
+ })
+ .catch(err=>console.log(err))
+
+</script>
+</html>
